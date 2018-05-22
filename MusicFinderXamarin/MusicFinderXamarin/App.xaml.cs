@@ -13,7 +13,7 @@ namespace MusicFinderXamarin
 		{
 			InitializeComponent();
 
-			MainPage = new MusicFinderXamarin.MainPage();
+            MainPage = new NavigationPage(new MusicFinderXamarin.MainPage() { Title = "Music Finder [XAMARIN]" });
 		}
 
 		protected override void OnStart ()

@@ -4,8 +4,34 @@
              xmlns:local="clr-namespace:MusicFinderXamarin"
              x:Class="MusicFinderXamarin.MainPage">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+
+            <Entry x:Name="ArtistSearchEntry" Text="" Placeholder="Search for an Artist" />
+
+            <Button x:Name="SearchArtistButton" Text="Search" />
+            
+            <ListView Margin="10" x:Name="ArtistsListView" IsVisible="False">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0"
+                                        Text="{Binding Name}" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                                <Label Grid.Column="0" Grid.Row="1"
+                                        Text="{Binding Type}" FontAttributes="Italic" />
+                                <Label Grid.Column="1" Grid.Row="1"
+                                        Text="{Binding Area.Name}" FontSize="Small" HorizontalTextAlignment="End" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label x:Name="SearchingLabel" Text="Searching..." HorizontalTextAlignment="Center" IsVisible="False"/>
+
+        </StackLayout>
+
+    </ContentPage.Content>
 
 </ContentPage>
