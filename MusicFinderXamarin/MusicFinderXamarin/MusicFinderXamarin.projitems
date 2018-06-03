@@ -12,6 +12,7 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ReleasesPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)RecordingsPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -22,6 +23,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ReleasesPage.xaml.cs">
       <DependentUpon>ReleasesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)RecordingsPage.xaml.cs">
+      <DependentUpon>RecordingsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

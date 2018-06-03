@@ -21,7 +21,7 @@ namespace MusicFinderXamarin
         private void ArtistsListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             Artist artist = (Artist)ArtistsListView.SelectedItem;
-            Navigation.PushAsync(new ReleasesPage() { Artist = artist });
+            Navigation.PushAsync(new ReleasesPage() { Artist = artist, Client = Client });
         }
 
         private async void SearchArtistButton_Clicked(object sender, System.EventArgs e)

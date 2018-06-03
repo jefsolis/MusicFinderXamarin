@@ -59,6 +59,18 @@ namespace MusicFinderXamarin.Services
             return releases.Releases;
         }
 
+        public async Task<List<Recording>> GetRecordings(string releaseId)
+        {
+            var client = CreateClient();
+
+            // get releases
+            var json = await client.GetStringAsync(CreateUrl("recording/?query=reid:" + releaseId));
+
+            var recordings = JsonConvert.DeserializeObject<RecordingList>(json);
+
+            return recordings.Recordings;
+        }
+
         private HttpClient CreateClient()
         {
             var client = new HttpClient();

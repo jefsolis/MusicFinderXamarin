@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MusicFinderXamarin.ReleasesPage"
-             Title="Albums">
+             x:Class="MusicFinderXamarin.RecordingsPage"
+             Title="Songs">
     <ContentPage.Content>
         <StackLayout>
 
-            <Label Text="Select an Album to load songs"/>
+            <Label Text="Select a Song to listen to it"/>
 
-            <ListView Margin="10" x:Name="ReleasesListView" IsVisible="False">
+            <ListView Margin="10" x:Name="RecordingsListView" IsVisible="False">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -16,17 +16,17 @@
                                 <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0"
                                         Text="{Binding Title}" FontAttributes="Bold" HorizontalTextAlignment="Center" />
                                 <Label Grid.Column="0" Grid.Row="1"
-                                        Text="{Binding Date}" FontAttributes="Italic" />
+                                        Text="{Binding Length}" FontAttributes="Italic" />
                                 <Label Grid.Column="1" Grid.Row="1"
-                                        Text="{Binding Quality}" FontSize="Small" HorizontalTextAlignment="End" />
+                                        Text="{Binding Rating}" FontSize="Small" HorizontalTextAlignment="End" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
 
-            <Label x:Name="SearchingLabel" Text="Searching albums..." HorizontalTextAlignment="Center" IsVisible="True"/>
-            
+            <Label x:Name="SearchingLabel" Text="Searching songs..." HorizontalTextAlignment="Center" IsVisible="True"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

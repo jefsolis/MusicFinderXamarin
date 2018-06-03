@@ -10,7 +10,9 @@
             <Entry x:Name="ArtistSearchEntry" Text="" Placeholder="Search for an Artist" />
 
             <Button x:Name="SearchArtistButton" Text="Search" />
-            
+
+            <Label Text="Select an Artist to load Albums"/>
+
             <ListView Margin="10" x:Name="ArtistsListView" IsVisible="False">
                 <ListView.ItemTemplate>
                     <DataTemplate>
