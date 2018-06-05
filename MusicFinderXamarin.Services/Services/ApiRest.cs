@@ -12,6 +12,7 @@ namespace MusicFinderXamarin.Services
     public class ApiRest
     {
         public const string SERVICE_ENDPOINT = "https://musicbrainz.org/ws/2/";
+        public const string COVER_ART_SERVICE_ENDPOINT = "http://coverartarchive.org/release/";
 
         public async Task<string> GetJson()
         {
@@ -57,6 +58,33 @@ namespace MusicFinderXamarin.Services
             var releases = JsonConvert.DeserializeObject<ReleaseList>(json);
 
             return releases.Releases;
+        }
+
+        public async Task<string> GetCoverArtUrl(string mbId)
+        {
+            var client = new HttpClient();
+            try
+            {
+                client.BaseAddress = new Uri(COVER_ART_SERVICE_ENDPOINT);
+
+                var json = await client.GetStringAsync(mbId);
+
+                // get value for 'image' key
+                string[] values = json.Split(',');
+                foreach (string value in values)
+                {
+                    string[] key = value.Split(':');
+                    if (key[0].Equals("\"image\""))
+                    {
+                        return key[1] + ":" + key[2];
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
+
+            return string.Empty;
         }
 
         public async Task<List<Recording>> GetRecordings(string releaseId)

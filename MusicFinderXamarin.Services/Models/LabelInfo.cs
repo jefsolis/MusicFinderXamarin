@@ -10,7 +10,7 @@ namespace MusicFinderXamarin.Services
 
         public Label Label => this._label;
 
-        [JsonProperty("label", Required = Required.AllowNull)]
+        [JsonProperty("label", Required = Required.Default)]
         private Label _label = null;
 
         public override string ToString()

@@ -9,12 +9,12 @@ namespace MusicFinderXamarin.Services
     {
         public IReadOnlyList<Track> DataTracks => this._dataTracks;
 
-        [JsonProperty("data-tracks", Required = Required.DisallowNull)]
+        [JsonProperty("data-tracks", Required = Required.Default)]
         private Track[] _dataTracks = null;
 
         public IReadOnlyList<Disc> Discs => this._discs;
 
-        [JsonProperty("discs", Required = Required.DisallowNull)]
+        [JsonProperty("discs", Required = Required.Default)]
         private Disc[] _discs = null;
 
         [JsonProperty("format", Required = Required.Default)]
@@ -23,18 +23,18 @@ namespace MusicFinderXamarin.Services
         [JsonProperty("format-id", Required = Required.Default)]
         public Guid? FormatId { get; private set; }
 
-        [JsonProperty("position", Required = Required.DisallowNull)]
+        [JsonProperty("position", Required = Required.Default)]
         public int Position { get; private set; }
 
         public Track Pregap => this._pregap;
 
-        [JsonProperty("pregap", Required = Required.DisallowNull)]
+        [JsonProperty("pregap", Required = Required.Default)]
         private Track _pregap = null;
 
-        [JsonProperty("title", Required = Required.DisallowNull)]
+        [JsonProperty("title", Required = Required.Default)]
         public string Title { get; private set; }
 
-        [JsonProperty("track-count", Required = Required.AllowNull)]
+        [JsonProperty("track-count", Required = Required.Default)]
         public int TrackCount { get; private set; }
 
         [JsonProperty("track-offset", Required = Required.Default)]
@@ -42,7 +42,7 @@ namespace MusicFinderXamarin.Services
 
         public IReadOnlyList<Track> Tracks => this._tracks;
 
-        [JsonProperty("tracks", Required = Required.DisallowNull)]
+        [JsonProperty("tracks", Required = Required.Default)]
         private Track[] _tracks = null;
 
         #region Search Server Compatibility

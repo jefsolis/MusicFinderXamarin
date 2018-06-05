@@ -6,10 +6,10 @@ namespace MusicFinderXamarin.Services
     public sealed class TextRepresentation
     {
 
-        [JsonProperty("language", Required = Required.AllowNull)]
+        [JsonProperty("language", Required = Required.Default)]
         public string Language { get; private set; }
 
-        [JsonProperty("script", Required = Required.AllowNull)]
+        [JsonProperty("script", Required = Required.Default)]
         public string Script { get; private set; }
 
         public override string ToString() => $"{this.Language ?? "???"} / {this.Script ?? "????"}";

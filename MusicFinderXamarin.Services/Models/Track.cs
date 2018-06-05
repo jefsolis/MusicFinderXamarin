@@ -7,26 +7,26 @@ namespace MusicFinderXamarin.Services
     [JsonObject(MemberSerialization.OptIn)]
     public sealed class Track
     {
-        [JsonProperty("id", Required = Required.Always)]
+        [JsonProperty("id", Required = Required.Default)]
         public Guid MbId { get; private set; }
 
         public IReadOnlyList<NameCredit> ArtistCredit => this._artistCredit;
 
-        [JsonProperty("artist-credit", Required = Required.DisallowNull)]
+        [JsonProperty("artist-credit", Required = Required.Default)]
         private NameCredit[] _artistCredit = null;
 
-        [JsonProperty("length", Required = Required.AllowNull)]
+        [JsonProperty("length", Required = Required.Default)]
         public int? Length { get; private set; }
 
-        [JsonProperty("number", Required = Required.AllowNull)]
+        [JsonProperty("number", Required = Required.Default)]
         public string Number { get; private set; }
 
         public Recording Recording => this._recording;
 
-        [JsonProperty("recording", Required = Required.DisallowNull)]
+        [JsonProperty("recording", Required = Required.Default)]
         private Recording _recording = null;
 
-        [JsonProperty("title", Required = Required.Always)]
+        [JsonProperty("title", Required = Required.Default)]
         public string Title { get; private set; }
 
         public override string ToString()

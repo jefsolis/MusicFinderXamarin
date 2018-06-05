@@ -13,12 +13,12 @@ namespace MusicFinderXamarin.Services
     [JsonObject(MemberSerialization.OptIn)]
     public sealed class Recording
     {
-        [JsonProperty("id", Required = Required.Always)]
+        [JsonProperty("id", Required = Required.Default)]
         public Guid MbId { get; private set; }
 
         public IReadOnlyList<Alias> Aliases => this._aliases;
 
-        [JsonProperty("aliases", Required = Required.DisallowNull)]
+        [JsonProperty("aliases", Required = Required.Default)]
         private Alias[] _aliases = null;
 
         [JsonProperty("annotation", Required = Required.Default)]
@@ -26,10 +26,10 @@ namespace MusicFinderXamarin.Services
 
         public IReadOnlyList<NameCredit> ArtistCredit => this._artistCredit;
 
-        [JsonProperty("artist-credit", Required = Required.DisallowNull)]
+        [JsonProperty("artist-credit", Required = Required.Default)]
         private NameCredit[] _artistCredit = null;
 
-        [JsonProperty("disambiguation", Required = Required.DisallowNull)]
+        [JsonProperty("disambiguation", Required = Required.Default)]
         public string Disambiguation { get; private set; }
 
         public IReadOnlyList<string> Isrcs { get; private set; }
@@ -39,40 +39,40 @@ namespace MusicFinderXamarin.Services
 
         public Rating Rating => this._rating;
 
-        [JsonProperty("rating", Required = Required.DisallowNull)]
+        [JsonProperty("rating", Required = Required.Default)]
         private Rating _rating = null;
 
         public IReadOnlyList<Relationship> Relationships => this._relationships;
 
-        [JsonProperty("relations", Required = Required.DisallowNull)]
+        [JsonProperty("relations", Required = Required.Default)]
         private Relationship[] _relationships = null;
 
         public IReadOnlyList<Release> Releases => this._releases;
 
-        [JsonProperty("releases", Required = Required.DisallowNull)]
+        [JsonProperty("releases", Required = Required.Default)]
         private Release[] _releases = null;
 
         public IReadOnlyList<Tag> Tags => this._tags;
 
-        [JsonProperty("tags", Required = Required.DisallowNull)]
+        [JsonProperty("tags", Required = Required.Default)]
         private Tag[] _tags = null;
 
-        [JsonProperty("title", Required = Required.Always)]
+        [JsonProperty("title", Required = Required.Default)]
         public string Title { get; private set; }
 
         public UserRating UserRating => this._userRating;
 
-        [JsonProperty("user-rating", Required = Required.DisallowNull)]
+        [JsonProperty("user-rating", Required = Required.Default)]
         private UserRating _userRating = null;
 
         public IReadOnlyList<UserTag> UserTags => this._userTags;
 
-        [JsonProperty("user-tags", Required = Required.DisallowNull)]
+        [JsonProperty("user-tags", Required = Required.Default)]
         private UserTag[] _userTags = null;
 
         public bool Video => this._video.GetValueOrDefault();
 
-        [JsonProperty("video", Required = Required.AllowNull)]
+        [JsonProperty("video", Required = Required.Default)]
         private bool? _video = null;
 
         #region Search Server Compatibility
@@ -86,7 +86,7 @@ namespace MusicFinderXamarin.Services
         // - the ISRCs are not serialized as an array of strings, but as an array of objects with only an ID property
         // => added a setter-only property for those, which extract the IDs
 
-        [JsonProperty("isrcs", Required = Required.DisallowNull)]
+        [JsonProperty("isrcs", Required = Required.Default)]
         private JArray RawIsrcs
         {
             set

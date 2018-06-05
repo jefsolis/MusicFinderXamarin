@@ -7,13 +7,13 @@ namespace MusicFinderXamarin.Services
     {
         public Artist Artist => this._artist;
 
-        [JsonProperty("artist", Required = Required.Always)]
+        [JsonProperty("artist", Required = Required.Default)]
         private Artist _artist = null;
 
-        [JsonProperty("joinphrase", Required = Required.DisallowNull)]
+        [JsonProperty("joinphrase", Required = Required.Default)]
         public string JoinPhrase { get; private set; }
 
-        [JsonProperty("name", Required = Required.DisallowNull)]
+        [JsonProperty("name", Required = Required.Default)]
         public string Name { get; private set; }
 
         #region Search Server Compatibility

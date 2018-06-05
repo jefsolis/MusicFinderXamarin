@@ -29,6 +29,8 @@ namespace MusicFinderXamarin
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+
+            ArtistLabel.Text = Artist.Name;
             
             Releases.Clear();
             foreach (Release release in await Client.GetReleases(Artist.MbId.ToString()))

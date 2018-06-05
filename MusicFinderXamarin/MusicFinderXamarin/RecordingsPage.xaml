@@ -6,6 +6,8 @@
     <ContentPage.Content>
         <StackLayout>
 
+            <Image x:Name="CoverImage" WidthRequest="100" HeightRequest="100" />
+            <Label x:Name="TitleLabel" FontAttributes="Bold" />
             <Label Text="Select a Song to listen to it"/>
 
             <ListView Margin="10" x:Name="RecordingsListView" IsVisible="False">
@@ -16,7 +18,7 @@
                                 <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0"
                                         Text="{Binding Title}" FontAttributes="Bold" HorizontalTextAlignment="Center" />
                                 <Label Grid.Column="0" Grid.Row="1"
-                                        Text="{Binding Length}" FontAttributes="Italic" />
+                                        Text="{Binding Tags[0].Name}" FontAttributes="Italic" />
                                 <Label Grid.Column="1" Grid.Row="1"
                                         Text="{Binding Rating}" FontSize="Small" HorizontalTextAlignment="End" />
                             </Grid>

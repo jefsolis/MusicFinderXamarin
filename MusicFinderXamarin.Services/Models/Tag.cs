@@ -6,7 +6,7 @@ namespace MusicFinderXamarin.Services
     public sealed class Tag
     {
 
-        [JsonProperty("name", Required = Required.Always)]
+        [JsonProperty("name", Required = Required.Default)]
         public string Name { get; private set; }
 
         [JsonProperty("count", Required = Required.Default)]

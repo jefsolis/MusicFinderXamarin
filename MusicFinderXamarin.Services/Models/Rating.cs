@@ -7,10 +7,10 @@ namespace MusicFinderXamarin.Services
     public sealed class Rating
     {
 
-        [JsonProperty("value", Required = Required.AllowNull)]
+        [JsonProperty("value", Required = Required.Default)]
         public decimal? Value { get; private set; }
 
-        [JsonProperty("votes-count", Required = Required.Always)]
+        [JsonProperty("votes-count", Required = Required.Default)]
         public int VoteCount { get; private set; }
 
         public override string ToString()

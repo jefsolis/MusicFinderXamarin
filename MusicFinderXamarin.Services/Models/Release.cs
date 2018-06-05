@@ -12,12 +12,12 @@ namespace MusicFinderXamarin.Services
     [JsonObject(MemberSerialization.OptIn)]
     public sealed class Release
     {
-        [JsonProperty("id", Required = Required.Always)]
+        [JsonProperty("id", Required = Required.Default)]
         public Guid MbId { get; private set; }
 
         public IReadOnlyList<Alias> Aliases => this._aliases;
 
-        [JsonProperty("aliases", Required = Required.DisallowNull)]
+        [JsonProperty("aliases", Required = Required.Default)]
         private Alias[] _aliases = null;
 
         [JsonProperty("annotation", Required = Required.Default)]
@@ -25,7 +25,7 @@ namespace MusicFinderXamarin.Services
 
         public IReadOnlyList<NameCredit> ArtistCredit => this._artistCredit;
 
-        [JsonProperty("artist-credit", Required = Required.DisallowNull)]
+        [JsonProperty("artist-credit", Required = Required.Default)]
         private NameCredit[] _artistCredit = null;
 
         [JsonProperty("asin", Required = Required.Default)]
@@ -36,7 +36,7 @@ namespace MusicFinderXamarin.Services
 
         public IReadOnlyList<Collection> Collections => this._collections;
 
-        [JsonProperty("collections", Required = Required.DisallowNull)]
+        [JsonProperty("collections", Required = Required.Default)]
         private Collection[] _collections = null;
 
         [JsonProperty("country", Required = Required.Default)]
@@ -44,23 +44,35 @@ namespace MusicFinderXamarin.Services
 
         public CoverArtArchive CoverArtArchive => this._coverArtArchive;
 
-        [JsonProperty("cover-art-archive", Required = Required.DisallowNull)]
+        [JsonProperty("cover-art-archive", Required = Required.Default)]
         private CoverArtArchive _coverArtArchive = null;
+
+        private string _cover;
+        public string CoverArtUrl {
+            get
+            {
+                return _cover;
+            }
+            set
+            {
+                _cover = value.Replace("\"", "");
+            }
+        }
 
         [JsonProperty("date", Required = Required.Default)]
         public PartialDate Date { get; private set; }
 
-        [JsonProperty("disambiguation", Required = Required.DisallowNull)]
+        [JsonProperty("disambiguation", Required = Required.Default)]
         public string Disambiguation { get; private set; }
 
         public IReadOnlyList<LabelInfo> LabelInfo => this._labelInfo;
 
-        [JsonProperty("label-info", Required = Required.DisallowNull)]
+        [JsonProperty("label-info", Required = Required.Default)]
         private LabelInfo[] _labelInfo = null;
 
         public IReadOnlyList<Medium> Media => this._media;
 
-        [JsonProperty("media", Required = Required.DisallowNull)]
+        [JsonProperty("media", Required = Required.Default)]
         private Medium[] _media = null;
 
         [JsonProperty("packaging", Required = Required.Default)]
@@ -69,17 +81,17 @@ namespace MusicFinderXamarin.Services
         [JsonProperty("packaging-id", Required = Required.Default)]
         public Guid? PackagingId { get; private set; }
 
-        [JsonProperty("quality", Required = Required.DisallowNull)]
+        [JsonProperty("quality", Required = Required.Default)]
         public string Quality { get; private set; }
 
         public IReadOnlyList<Relationship> Relationships => this._relationships;
 
-        [JsonProperty("relations", Required = Required.DisallowNull)]
+        [JsonProperty("relations", Required = Required.Default)]
         private Relationship[] _relationships = null;
 
         public IReadOnlyList<ReleaseEvent> ReleaseEvents => this._releaseEvents;
 
-        [JsonProperty("release-events", Required = Required.DisallowNull)]
+        [JsonProperty("release-events", Required = Required.Default)]
         private ReleaseEvent[] _releaseEvents = null;
 
         public ReleaseGroup ReleaseGroup => this._releaseGroup;
@@ -95,20 +107,20 @@ namespace MusicFinderXamarin.Services
 
         public IReadOnlyList<Tag> Tags => this._tags;
 
-        [JsonProperty("tags", Required = Required.DisallowNull)]
+        [JsonProperty("tags", Required = Required.Default)]
         private Tag[] _tags = null;
 
         public TextRepresentation TextRepresentation => this._textRepresentation;
 
-        [JsonProperty("text-representation", Required = Required.DisallowNull)]
+        [JsonProperty("text-representation", Required = Required.Default)]
         private TextRepresentation _textRepresentation = null;
 
-        [JsonProperty("title", Required = Required.Always)]
+        [JsonProperty("title", Required = Required.Default)]
         public string Title { get; private set; }
 
         public IReadOnlyList<UserTag> UserTags => this._userTags;
 
-        [JsonProperty("user-tags", Required = Required.DisallowNull)]
+        [JsonProperty("user-tags", Required = Required.Default)]
         private UserTag[] _userTags = null;
 
         #region Search Server Compatibility

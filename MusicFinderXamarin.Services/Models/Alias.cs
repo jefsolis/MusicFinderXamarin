@@ -12,22 +12,22 @@ namespace MusicFinderXamarin.Services
         //[JsonProperty("end", Required = Required.Default)]
         //public PartialDate End { get; private set; }
 
-        [JsonProperty("ended", Required = Required.DisallowNull)]
+        [JsonProperty("ended", Required = Required.Default)]
         public bool Ended { get; private set; }
 
-        [JsonProperty("locale", Required = Required.AllowNull)]
+        [JsonProperty("locale", Required = Required.Default)]
         public string Locale { get; private set; }
 
-        [JsonProperty("name", Required = Required.Always)]
+        [JsonProperty("name", Required = Required.Default)]
         public string Name { get; private set; }
 
-        [JsonProperty("primary", Required = Required.AllowNull)]
+        [JsonProperty("primary", Required = Required.Default)]
         public bool? Primary { get; private set; }
 
-        [JsonProperty("sort-name", Required = Required.AllowNull)]
+        [JsonProperty("sort-name", Required = Required.Default)]
         public string SortName { get; private set; }
 
-        [JsonProperty("type", Required = Required.AllowNull)]
+        [JsonProperty("type", Required = Required.Default)]
         public string Type { get; private set; }
 
         [JsonProperty("type-id", Required = Required.Default)]

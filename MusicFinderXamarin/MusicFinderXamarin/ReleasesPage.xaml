@@ -6,6 +6,7 @@
     <ContentPage.Content>
         <StackLayout>
 
+            <Label x:Name="ArtistLabel" FontAttributes="Bold"/>
             <Label Text="Select an Album to load songs"/>
 
             <ListView Margin="10" x:Name="ReleasesListView" IsVisible="False">
@@ -16,9 +17,9 @@
                                 <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0"
                                         Text="{Binding Title}" FontAttributes="Bold" HorizontalTextAlignment="Center" />
                                 <Label Grid.Column="0" Grid.Row="1"
-                                        Text="{Binding Date}" FontAttributes="Italic" />
+                                        Text="{Binding Date.Year}" FontAttributes="Italic" />
                                 <Label Grid.Column="1" Grid.Row="1"
-                                        Text="{Binding Quality}" FontSize="Small" HorizontalTextAlignment="End" />
+                                        Text="{Binding Country}" FontSize="Small" HorizontalTextAlignment="End" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

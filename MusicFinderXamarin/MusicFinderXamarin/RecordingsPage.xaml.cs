@@ -31,6 +31,15 @@ namespace MusicFinderXamarin
         {
             base.OnAppearing();
 
+            TitleLabel.Text = Release.Title;
+
+            // load cover art
+            Release.CoverArtUrl = await Client.GetCoverArtUrl(Release.MbId.ToString());
+            if (!string.IsNullOrEmpty(Release.CoverArtUrl))
+            {
+                CoverImage.Source = new Uri(Release.CoverArtUrl);
+            }
+
             Recordings.Clear();
             foreach (Recording recording in await Client.GetRecordings(Release.MbId.ToString()))
             {

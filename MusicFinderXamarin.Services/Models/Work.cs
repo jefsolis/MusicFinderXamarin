@@ -7,12 +7,12 @@ namespace MusicFinderXamarin.Services
     [JsonObject(MemberSerialization.OptIn)]
     public sealed class Work
     {
-        [JsonProperty("id", Required = Required.Always)]
+        [JsonProperty("id", Required = Required.Default)]
         public Guid MbId { get; private set; }
 
         public IReadOnlyList<Alias> Aliases => this._aliases;
 
-        [JsonProperty("aliases", Required = Required.DisallowNull)]
+        [JsonProperty("aliases", Required = Required.Default)]
         private Alias[] _aliases = null;
 
         [JsonProperty("annotation", Required = Required.Default)]
@@ -20,37 +20,37 @@ namespace MusicFinderXamarin.Services
 
         public IReadOnlyList<WorkAttribute> Attributes => this._attributes;
 
-        [JsonProperty("attributes", Required = Required.DisallowNull)]
+        [JsonProperty("attributes", Required = Required.Default)]
         private WorkAttribute[] _attributes = null;
 
-        [JsonProperty("disambiguation", Required = Required.DisallowNull)]
+        [JsonProperty("disambiguation", Required = Required.Default)]
         public string Disambiguation { get; private set; }
 
-        [JsonProperty("iswcs", Required = Required.DisallowNull)]
+        [JsonProperty("iswcs", Required = Required.Default)]
         public IReadOnlyList<string> Iswcs { get; private set; }
 
         [JsonProperty("language", Required = Required.Default)]
         public string Language { get; private set; }
 
-        [JsonProperty("languages", Required = Required.DisallowNull)]
+        [JsonProperty("languages", Required = Required.Default)]
         public IReadOnlyList<string> Languages { get; private set; }
 
         public Rating Rating => this._rating;
 
-        [JsonProperty("rating", Required = Required.DisallowNull)]
+        [JsonProperty("rating", Required = Required.Default)]
         private Rating _rating = null;
 
         public IReadOnlyList<Relationship> Relationships => this._relationships;
 
-        [JsonProperty("relations", Required = Required.DisallowNull)]
+        [JsonProperty("relations", Required = Required.Default)]
         private Relationship[] _relationships = null;
 
         public IReadOnlyList<Tag> Tags => this._tags;
 
-        [JsonProperty("tags", Required = Required.DisallowNull)]
+        [JsonProperty("tags", Required = Required.Default)]
         private Tag[] _tags = null;
 
-        [JsonProperty("title", Required = Required.Always)]
+        [JsonProperty("title", Required = Required.Default)]
         public string Title { get; private set; }
 
         [JsonProperty("type", Required = Required.Default)]
@@ -61,12 +61,12 @@ namespace MusicFinderXamarin.Services
 
         public UserRating UserRating => this._userRating;
 
-        [JsonProperty("user-rating", Required = Required.DisallowNull)]
+        [JsonProperty("user-rating", Required = Required.Default)]
         private UserRating _userRating = null;
 
         public IReadOnlyList<UserTag> UserTags => this._userTags;
 
-        [JsonProperty("user-tags", Required = Required.DisallowNull)]
+        [JsonProperty("user-tags", Required = Required.Default)]
         private UserTag[] _userTags = null;
 
         #region Search Server Compatibility

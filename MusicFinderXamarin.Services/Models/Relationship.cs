@@ -9,88 +9,88 @@ namespace MusicFinderXamarin.Services
     {
         public Area Area => this._area;
 
-        [JsonProperty("area", Required = Required.DisallowNull)]
+        [JsonProperty("area", Required = Required.Default)]
         private Area _area = null;
 
         public Artist Artist => this._artist;
 
-        [JsonProperty("artist", Required = Required.DisallowNull)]
+        [JsonProperty("artist", Required = Required.Default)]
         private Artist _artist = null;
 
-        [JsonProperty("attributes", Required = Required.DisallowNull)]
+        [JsonProperty("attributes", Required = Required.Default)]
         public IReadOnlyList<string> Attributes { get; private set; }
 
-        [JsonProperty("attribute-credits", Required = Required.DisallowNull)]
+        [JsonProperty("attribute-credits", Required = Required.Default)]
         public IReadOnlyDictionary<string, string> AttributeCredits { get; private set; }
 
-        [JsonProperty("attribute-values", Required = Required.DisallowNull)]
+        [JsonProperty("attribute-values", Required = Required.Default)]
         public IReadOnlyDictionary<string, string> AttributeValues { get; private set; }
 
         [JsonProperty("begin", Required = Required.Default)]
         public PartialDate Begin { get; private set; }
 
-        [JsonProperty("direction", Required = Required.Always)]
+        [JsonProperty("direction", Required = Required.Default)]
         public string Direction { get; private set; }
 
         [JsonProperty("end", Required = Required.Default)]
         public PartialDate End { get; private set; }
 
-        [JsonProperty("ended", Required = Required.DisallowNull)]
+        [JsonProperty("ended", Required = Required.Default)]
         public bool Ended { get; private set; }
 
         public Event Event => this._event;
 
-        [JsonProperty("event", Required = Required.DisallowNull)]
+        [JsonProperty("event", Required = Required.Default)]
         private Event _event = null;
 
         public Instrument Instrument => this._instrument;
 
-        [JsonProperty("instrument", Required = Required.DisallowNull)]
+        [JsonProperty("instrument", Required = Required.Default)]
         private Instrument _instrument = null;
 
         public Label Label => this._label;
 
-        [JsonProperty("label", Required = Required.DisallowNull)]
+        [JsonProperty("label", Required = Required.Default)]
         private Label _label = null;
 
-        [JsonProperty("ordering-key", Required = Required.DisallowNull)]
+        [JsonProperty("ordering-key", Required = Required.Default)]
         public int? OrderingKey { get; private set; }
 
         public Place Place => this._place;
 
-        [JsonProperty("place", Required = Required.DisallowNull)]
+        [JsonProperty("place", Required = Required.Default)]
         private Place _place = null;
 
         public Recording Recording => this._recording;
 
-        [JsonProperty("recording", Required = Required.DisallowNull)]
+        [JsonProperty("recording", Required = Required.Default)]
         private Recording _recording = null;
 
         public Release Release => this._release;
 
-        [JsonProperty("release", Required = Required.DisallowNull)]
+        [JsonProperty("release", Required = Required.Default)]
         private Release _release = null;
 
         public ReleaseGroup ReleaseGroup => this._releaseGroup;
 
-        [JsonProperty("release_group", Required = Required.DisallowNull)]
+        [JsonProperty("release_group", Required = Required.Default)]
         private ReleaseGroup _releaseGroup = null;
 
         public Series Series => this._series;
 
-        [JsonProperty("series", Required = Required.DisallowNull)]
+        [JsonProperty("series", Required = Required.Default)]
         private Series _series = null;
 
-        [JsonProperty("source-credit", Required = Required.DisallowNull)]
+        [JsonProperty("source-credit", Required = Required.Default)]
         public string SourceCredit { get; private set; }
 
-        [JsonProperty("target-credit", Required = Required.DisallowNull)]
+        [JsonProperty("target-credit", Required = Required.Default)]
         public string TargetCredit { get; private set; }
 
-        [JsonProperty("target-type", Required = Required.DisallowNull)]
+        [JsonProperty("target-type", Required = Required.Default)]
         public string TargetTypeText { get; private set; }
 
-        [JsonProperty("type", Required = Required.Always)]
+        [JsonProperty("type", Required = Required.Default)]
         public string Type { get; private set; }
 
         [JsonProperty("type-id", Required = Required.Default)]
@@ -98,12 +98,12 @@ namespace MusicFinderXamarin.Services
 
         public Url Url => this._url;
 
-        [JsonProperty("url", Required = Required.DisallowNull)]
+        [JsonProperty("url", Required = Required.Default)]
         private Url _url = null;
 
         public Work Work => this._work;
 
-        [JsonProperty("work", Required = Required.DisallowNull)]
+        [JsonProperty("work", Required = Required.Default)]
         private Work _work = null;
 
         #region Search Server Compatibility
